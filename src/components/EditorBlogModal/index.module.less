@@ -1,0 +1,194 @@
+.EditorBlogModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  z-index: 20;
+  .Top {
+    height: 50px;
+    border-bottom: #EEEEEE 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px;
+    .TopLeft {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      .BlogName {
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+    }
+    .TopRight {
+
+    }
+    .Btn {
+      cursor: pointer;
+      padding: 4px;
+      &:hover{
+        transition: all 0.2s linear;
+        color: white;
+        border-radius: 2px;
+        box-shadow: #757575 inset 0 0 6px;
+        background-color: #9E9E9E;
+        transform: rotate(130deg);
+      }
+    }
+  }
+  .Content {
+    padding: 0 6rem;
+    margin-top: 40px;
+    height: 80vh;
+    overflow-y: scroll;
+
+    .ContentRowWrap {
+      position: relative;
+      margin-bottom: 30px;
+      .ContentRow {
+        width: 100%;
+        height: 33px;
+        cursor: text;
+        outline: none;
+        font-size: 1.2rem;
+        padding: 8px 12px;
+        border-radius: 4px;
+        &:hover {
+          border-bottom: #9E9E9E 1px dashed;
+          height: 32px;
+        }
+        &::selection {
+          background-color: black;
+          color: white;
+        }
+      }
+      .ToolbarWrap {
+        position: absolute;
+        background-color: white;
+        padding: 10px;
+        border-radius: 2px;
+        border-top: black 4px solid;
+        box-shadow: 0 2px 6px black;
+        z-index: 100;
+
+        .Toolbar {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          position: relative;
+          justify-content: space-between;
+          .ToolbarItem {
+            cursor: pointer;
+            padding: 2px 8px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            &:hover{
+              transition: all 0.2s linear;
+              background-color: black;
+              color: white;
+            }
+          }
+          .Corner {
+            position: absolute;
+            top:-26px;
+            left: 70%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px; /* 控制三角形大小 */
+            border-color: transparent transparent black transparent; /* 设置颜色 */
+          }
+        }
+      }
+      .Drag {
+        top: 16%;
+        left: -22px;
+        position: absolute;
+        padding: 4px 1px;
+        color: black;
+        border-radius: 2px;
+        cursor: pointer;
+        &:hover{
+          transition: all .2s linear;
+          background-color: black;
+          opacity: 1;
+          color: white;
+        }
+      }
+      .QuickTool {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 16%;
+        left: -60px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(23, 21, 21, 0.3);
+        &:hover{
+          transition: all 0.2s linear;
+          background-color: #6f7f80;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .QuickToolShow {
+        animation: quick-tool-show-a 0.2s linear;
+      }
+      .QuickToolHidden {
+        display: none;
+      }
+      .QuickToolExpand {
+        transition: all .2s linear;
+        transform: rotate(130deg);
+      }
+      @keyframes quick-tool-show-a {
+        from {
+          transform: scale(0.2);
+          transform-origin: center center;
+        }
+      }
+    }
+
+  }
+}
+
+
+.EditorBlogModalShow {
+  animation: modal-show-a 0.3s ease-in-out;
+}
+
+.EditorBlogModalHidden {
+  display: none;
+}
+
+.EditorBlogModalClose {
+  animation: modal-close-a 0.3s linear;
+}
+
+@keyframes modal-close-a {
+  to {
+    opacity: 0;
+    transform: translateY(400px) scale(.01);
+  }
+}
+
+@keyframes modal-show-a {
+  from {
+    opacity: 0;
+    transform: translateY(400px) scale(.2);
+  }
+
+}
+
+
+

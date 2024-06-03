@@ -1,0 +1,93 @@
+.AdminLayout {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  overflow-y: scroll;
+
+  .Header {
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #EEEEEE 1px solid;
+    padding: 10px 40px;
+
+    .Left {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 55px;
+
+      .Title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .NavGroup {
+        display: flex;
+        flex-direction: row;
+        gap: 26px;
+        position: relative;
+
+        .NavItem {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 10px;
+          font-size: 0.9rem;
+          cursor: pointer;
+          transition: all 0.1s linear;
+          width: 80px;
+        }
+
+        .ActiveNavItem {
+          font-weight: 600;
+        }
+
+        .ActiveLine {
+          transition: all 0.2s linear;
+          background: #4EBDF4;
+          height: 2px;
+          width: 80px;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+
+    .Right {
+      .Avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: gray;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+
+      }
+    }
+  }
+
+  .Content {
+    height: 80%;
+  }
+
+  .ContentAnimation {
+    animation: content-a 0.2s linear;
+  }
+}
+
+@keyframes content-a {
+  from{
+
+  }
+
+}

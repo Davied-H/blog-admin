@@ -1,0 +1,90 @@
+.Login {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  --btn-bg: #4EBDF4;
+  --btn-bg1: #3681a6;
+  .Left {
+    width: 60%;
+    background: #52B4E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .Wrap {
+      width: 600px;
+      height: 650px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      box-sizing: border-box;
+      padding-left: 65px;
+      p {
+        font-size: 52px;
+      }
+    }
+  }
+  .Right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .LoginForm {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      color: black;
+      width: 370px;
+      .Title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .InputGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 56px;
+        .Title2 {
+          font-size: 1.6rem;
+        }
+        .Input {
+          box-sizing: border-box;
+          width: 289px;
+          height: 36px;
+          background: var(--bg1);
+          color: black;
+          font-size: 1rem;
+          border-bottom:  #EEEEEE 1px solid;
+          transition: all 0.2s linear;
+
+          &:focus {
+            border-bottom:  var(--btn-bg) 2px solid;
+            &::placeholder {
+              transition: all 0.1s linear;
+              opacity: 0;
+            }
+          }
+        }
+      }
+      .SubmitBtn {
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        padding: 10px 116px;
+        background: var(--btn-bg);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: all 0.1s linear;
+        &:hover {
+          background: var(--btn-bg1);
+        }
+      }
+    }
+  }
+}
